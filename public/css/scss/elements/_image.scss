@@ -1,0 +1,25 @@
+//
+// Image Styles //
+//
+img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	&.img-circle-sm, 
+	&.img-circle-md, 
+	&.img-circle-lg {
+		border-radius: 50%;
+	}
+	&.img-circle-sm {
+		width: 80px;
+		height: 80px;
+	}
+	&.img-circle-md {
+		width: 100px;
+		height: 100px;
+	}
+	&.img-circle-lg {
+		width: 120px;
+		height: 120px;
+	}
+}

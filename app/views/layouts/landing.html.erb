@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <%= render 'layouts/head' %>
+	</head>
+	<body data-preloader="2">
+		<%= render 'layouts/header' %>
+		<%= render 'layouts/messages' %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+		<%= render 'layouts/javascripts' %>
+	</body>
+</html>

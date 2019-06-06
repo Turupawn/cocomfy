@@ -1,0 +1,35 @@
+<div class="section-fullscreen bg-image" style="background-image: url(/images/background.jpg)">
+<div class="bg-black-07">
+  <div class="container text-center">
+    <div class="position-middle">
+      <div class="row">
+        <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+          <h4 class="font-weight-light margin-bottom-30">Enter your login</h4>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= render 'layouts/messages' %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", required: true %>          
+            <%= f.password_field :password, autocomplete: "off", placeholder: "Password", required: true %>
+            <% if devise_mapping.rememberable? -%>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end -%>
+            <button type="submit" name="commit" class="button button-lg button-outline-white-2 button-fullwidth">Log in</button>
+          <% end %>
+
+
+          <div class="margin-top-30">
+            <ul class="list-unstyled">
+              <%= render "devise/shared/links" %>
+            </ul>
+          </div>
+        </div>
+      </div><!-- end row -->
+    </div><!-- end position-middle -->
+    <div class="position-bottom text-center">
+      <p>&copy; 2018 cocomfy.com</p>
+    </div><!-- end position-bottom -->
+  </div><!-- end container -->
+</div>
+</div>

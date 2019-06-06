@@ -1,0 +1,28 @@
+//
+// Footer Styles //
+//
+.footer {
+	padding: 70px 0;
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 20px;
+	}
+	#map-canvas {
+		width: 100%;
+		height: 100%;
+	}
+	@include breakpoint-less(lg) {
+		#map-canvas {
+			height: 250px;
+		}
+	}
+}
+
+.footer-bottom {
+	padding: 50px 0;
+	.row {
+		margin-bottom: -20px;
+		div[class^="col-"], div[class*=" col-"] {
+			margin-bottom: 20px;
+		}
+	}
+}

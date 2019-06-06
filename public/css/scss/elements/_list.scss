@@ -1,0 +1,175 @@
+//
+// List Styles //
+//
+ul {
+	margin: 0;
+	li {
+		margin: 0 0 10px;
+		&:last-child {
+			margin: 0;
+		}
+		ul, ol {
+			margin-top: 10px;
+		}
+		a {
+			@include transition(linear 0.1s);
+		}
+	}
+	&.list-unstyled, 
+	&.list-dash, 
+	&.list-horizontal, 
+	&.list-horizontal-unstyled, 
+	&.list-icon {
+		padding: 0;
+	}
+	&.list-unstyled {
+		li {
+			list-style-type: none;
+		}
+	}
+	&.list-dash {
+		li {
+			list-style-type: none;
+			&:before {
+				content: '\0336';
+				padding-right: 8px;
+			}
+			a {
+				&:hover {
+					padding-left: 2px;
+				}
+			}
+			ul, ol {
+				padding-left: 40px;
+			}
+		}
+	}
+	&.list-horizontal {
+		li {
+			display: inline-block;
+			margin: 0;
+			&:after {
+				content: ',';
+				padding-right: 3px;
+			}
+			&:last-child {
+				&:after {
+					content: '';
+					padding: 0;
+				}
+			}
+		}
+	}
+	&.list-horizontal-unstyled {
+		li {
+			display: inline-block;
+			margin: 0 20px 0 0;
+			&:last-child {
+				margin: 0;
+			}
+			a.button-circle {
+				margin: 0 -5px;
+			}
+		}
+		&.icon-xl {
+			li {
+				margin-right: 30px;
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+		&.icon-lg {
+			li {
+				margin-right: 24px;
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+	}
+	&.list-icon {
+		li {
+			list-style-type: none;
+			&:before {
+				font-family: "FontAwesome";
+				padding-right: 8px;
+			}
+			a {
+				&:hover {
+					padding-left: 2px;
+				}
+			}
+			ul, ol {
+				padding-left: 40px;
+			}
+		}
+		&.list-icon-check {
+			li {
+				&:before { content: "\f00c"; }
+			}
+		}
+		&.list-icon-close {
+			li {
+				&:before { content: "\f00d"; }
+			}
+		}
+		&.list-icon-plus {
+			li {
+				&:before { content: "\f067"; }
+			}
+		}
+		&.list-icon-arrow {
+			li {
+				&:before { content: "\f105"; }
+			}
+		}
+		&.list-icon-caret {
+			li {
+				&:before { content: "\f0da"; }
+			}
+		}
+		&.list-icon-trophy {
+			li {
+				&:before { content: "\f091"; }
+			}
+		}
+		&.list-icon-heart {
+			li {
+				&:before { content: "\f004"; }
+			}
+		}
+		&.list-icon-globe {
+			li {
+				&:before { content: "\f0ac"; }
+			}
+		}
+		&.list-icon-circle-check {
+			li {
+				&:before { content: "\f058"; }
+			}
+		}
+		&.list-icon-circle-plus {
+			li {
+				&:before { content: "\f055"; }
+			}
+		}
+		&.list-icon-circle-arrow {
+			li {
+				&:before { content: "\f138"; }
+			}
+		}
+	}
+}
+ol {
+	margin: 0;
+	li {
+		margin: 0 0 10px;
+		&:last-child {
+			margin: 0;
+		}
+		ul, ol {
+			margin-top: 10px;
+		}
+	}
+}

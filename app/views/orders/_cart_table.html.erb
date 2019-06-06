@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-12 col-lg-12">
+    <h3> Your cart</h3>
+    <div class="table-responsive">
+      <table class="product-table">
+        <thead>
+          <tr>
+            <th scope="col"><h6 class="heading-uppercase no-margin">Product</h6></th>
+            <th scope="col"><h6 class="heading-uppercase no-margin">Price</h6></th>
+            <th scope="col"><h6 class="heading-uppercase no-margin">Quantity</h6></th>
+            <th scope="col"><h6 class="heading-uppercase no-margin">Total</h6></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cart_items.each do |cart_item| %>
+            <tr>
+              <td class="cart-product-thumbnail">
+                <a href="#"><img src="../../assets/images/img-circle-small.jpg" alt=""></a>
+                <h6><%= cart_item[:item].name %></h6>
+              </td>
+              <td>
+                <% if @current_coupon %>
+                  <span><strike>Ð<%= cart_item[:item].doges %></strike> Ð<%= apply_discount(cart_item[:item].doges, @current_coupon.discount) %></span>
+                <% else %>
+                  <span>Ð<%= cart_item[:item].doges %></span>
+                <% end %>
+              </td>
+              <td class="cart-product-quantity">
+                <div class="product-quantity">
+
+                  <%= form_tag(change_cart_item_amount_path, method: "get", id: "minus_" + cart_item[:item].id.to_s, style: "float: left" ) do %>
+                    <%= hidden_field_tag(:item_id, cart_item[:item].id) %>
+                    <%= hidden_field_tag(:amount, cart_item[:amount] - 1) %>
+                    <a href="javascript:{}" onclick="document.getElementById('minus_<%= cart_item[:item].id.to_s %>').submit(); return false;">
+                      <button class="button-circle button-circle-xs button-circle-grey dec"><i class="ti-minus"></i></button>
+                    </a>
+                  <% end %>
+
+                  <input type="text" name="quantity" id="quantity" value="<%= cart_item[:amount] %>">
+
+                  <%= form_tag(change_cart_item_amount_path, method: "get", id: "plus_" + cart_item[:item].id.to_s, style: "float: right" ) do %>
+                    <%= hidden_field_tag(:item_id, cart_item[:item].id) %>
+                    <%= hidden_field_tag(:amount, cart_item[:amount] + 1) %>
+                    <a href="javascript:{}" onclick="document.getElementById('plus_<%= cart_item[:item].id.to_s %>').submit(); return false;">
+                    <button class="button-circle button-circle-xs button-circle-grey inc"><i class="ti-plus"></i></button>
+                    </a>
+                  <% end %>
+                  
+                </div>
+              </td>
+              <td class="cart-product-subtotal">
+                <% item_total_doges = cart_item[:item].doges * cart_item[:amount] %>
+                <% if @current_coupon %>
+                  <span><strike>Ð<%= item_total_doges %></strike></span> <span class="font-weight-bold">Ð<%= apply_discount(item_total_doges, @current_coupon.discount) %></span>
+                <% else %>
+                  <span class="font-weight-bold">Ð<%= item_total_doges %></span>
+                <% end %>
+              </td>
+              <td class="cart-product-remove">
+              <%= form_tag(remove_from_cart_path, method: "get", id: "remove_" + cart_item[:item].id.to_s ) do %>
+                <%= hidden_field_tag(:item_id, cart_item[:item].id) %>
+                <a href="javascript:{}" onclick="document.getElementById('remove_<%= cart_item[:item].id.to_s %>').submit(); return false;">
+                  <button><i class="ti-close"></i></button>
+                </a>
+              <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div><!-- end table-responsive -->
+  </div>
+</div><!-- end row -->

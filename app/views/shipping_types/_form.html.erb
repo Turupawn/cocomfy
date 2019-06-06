@@ -1,0 +1,27 @@
+<%= form_with(model: shipping_type, local: true) do |form| %>
+  <% if shipping_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shipping_type.errors.count, "error") %> prohibited this shipping_type from being saved:</h2>
+
+      <ul>
+      <% shipping_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :doges_per_kilo %>
+    <%= form.text_field :doges_per_kilo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

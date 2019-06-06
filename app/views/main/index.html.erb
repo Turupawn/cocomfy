@@ -1,0 +1,59 @@
+<% title 'Shop crypto related items' %>
+<% description 'Ðogecoins accpeted - We ship worldwide - Shop now!' %>
+<%= display_meta_tags image_src: '/images/meta_image.png' %>
+
+<!-- Home section -->
+<div class="owl-carousel owl-nav-overlay owl-dots-overlay" data-owl-autoplay="true" data-owl-nav="true" data-owl-dots="true" data-owl-items="1">
+  <!-- Slider box 1 -->
+  <div class="bg-image" style="background-image: url(/images/landing_01.jpg)">
+    <div class="section-lg bg-black-05">
+      <div class="container text-center">
+        <!--<h5 class="font-weight-light margin-bottom-20">much Ðogecoins accepted</h5>-->
+        <h5 class="font-weight-light margin-bottom-20">Pay with Ðogecoins</h5>
+        <%= link_to items_path, class: 'button button-xl button-reveal-left-outline-white margin-top-30', style: 'color: #e67e22; border-color: #e67e22' do %>
+        <i class="ti-shopping-cart"></i><span>Shop now</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- Slider box 2 -->
+  <div class="bg-image" style="background-image: url(/images/landing_02.jpg)">
+    <div class="section-lg bg-black-05">
+      <div class="container text-center">
+        <!--<h5 class="font-weight-light margin-bottom-20">much cute</h5>-->
+        <h5 class="font-weight-light margin-bottom-20">Small Doge figure</h5>
+        <%= link_to Item.first, class: 'button button-xl button-reveal-left-outline-white margin-top-30', style: 'color: #e67e22; border-color: #e67e22' do %>
+        <i class="ti-shopping-cart"></i><span>Buy Now</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div><!-- end owl-carousel -->
+<!-- end Home section -->
+
+<!-- Products section -->
+<div class="section">
+  <div class="container">
+    <div class="section-title text-center">
+      <h3>Featured Products</h3>
+    </div>
+    <div class="row product-wrapper">
+      <% @featured_items.each do |featured_item| %>
+        <% @item = featured_item.item %>
+        <%= render 'items/item' %>
+      <% end %>
+    </div><!-- end row -->
+  </div><!-- end container -->
+</div>
+<!-- end Products section -->
+
+<div class="section bg-image parallax" style="background-image: url(/images/we_ship_worldwide.jpg)">
+  <div class="bg-black-07">
+    <div class="container">
+      <h1 class="font-weight-thin">We ship worldwide</h1>
+      <a class="button button-xl button-fill-right-outline-white margin-top-30" style= "color: #e67e22; border-color: #e67e22" href="<%= items_path %>">Shop Now</a>
+    </div><!-- end container -->
+  </div>
+</div>
+
+<%= render 'email_subscription/subscription_form' %>

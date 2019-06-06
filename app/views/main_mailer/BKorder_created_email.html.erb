@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>wow! such order</h1>
+    <h3>Order details</h3>
+    <p>Order id: <strong><%= @order.hash_id %></strong>. Use this id while contacting customer support.</p>
+    <p>Use <a href="http://cocomfy.com/orders/<%= @order.hash_id%>?secure_hash=<%= @order.secure_hash %>">this link</a> or this email to track your order process.</p>
+    <h3>Shipping details</h3>
+    <p>First name: <strong><%= @order.first_name %></strong></p>
+    <p>Last name: <strong><%= @order.last_name %></strong></p>
+    <p>Shipping region: <strong><%= @order.shipping_type.name %></strong></p>
+    <p>Postal code: <strong><%= @order.postal_code %></strong></p>
+    <p>Shipping address: <strong><%= @order.shipping_address %></strong></p>
+
+    <h3>Products:</h3>
+    <ul>
+      <% @order.order_items.each do |order_item| %>
+        <li><b><%= order_item.item.name %><b> X <%= order_item.amount %> Ð<%= order_item.doges %></li>
+      <% end %>
+    </ul>
+    <ul>
+      <li>Subtotal: Ð<%= @order.subtotal_doges %></li>
+      <li>Shipping: Ð<%= @order.shipping_doges %></li>
+      <li>Total: <b>Ð<%= @order.total_doges %></b></li>
+    </ul>
+
+    <h2>Thank you for your business!</h2>
+
+    <p>cocomfy.com</p>
+  </body>
+</html>

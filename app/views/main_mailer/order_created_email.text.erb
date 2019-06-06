@@ -1,0 +1,27 @@
+wow! such order
+Order details
+=============
+Order id: <%= @order.hash_id %>. Use this id while contacting customer support.
+Use http://cocomfy.com/orders/<%= @order.hash_id%>?secure_hash=<%= @order.secure_hash %> or this email to track your order process.
+
+Shipping details
+================
+First name: <%= @order.first_name %>
+Last name: <%= @order.last_name %>
+Shipping region: <%= @order.shipping_type.name %>
+Postal code: <%= @order.postal_code %>
+Shipping address: <%= @order.shipping_address %>
+
+Products:
+========
+<% @order.order_items.each do |order_item| %>
+  * <%= order_item.item.name %> x<%= order_item.amount %> Ð<%= order_item.doges %>
+<% end %>
+
+Subtotal: Ð<%= @order.subtotal_doges %>
+Shipping: Ð<%= @order.shipping_doges %>
+Total: Ð<%= @order.total_doges %>
+
+Thank you for your business!
+
+cocomfy.com

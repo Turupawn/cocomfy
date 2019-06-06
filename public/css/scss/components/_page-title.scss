@@ -1,0 +1,45 @@
+//
+// Page Title Styles //
+//
+.page-title, 
+.page-title-md {
+	.container, .container-fluid {
+		padding: 110px 20px;
+	}
+}
+.page-title-xs {
+	.container, .container-fluid {
+		padding: 70px 20px;
+	}
+}
+.page-title-sm {
+	.container, .container-fluid {
+		padding: 90px 20px;
+	}
+}
+.page-title-lg {
+	.container, .container-fluid {
+		padding: 130px 20px;
+	}
+}
+.page-title-xl {
+	.container, .container-fluid {
+		padding: 150px 20px;
+	}
+}
+.page-title, 
+.page-title-xs, 
+.page-title-sm, 
+.page-title-md, 
+.page-title-lg,
+.page-title-xl {
+	p {
+		margin-bottom: 10px;
+	}
+	.row {
+		margin-bottom: 0;
+		div[class^="col-"], div[class*=" col-"] {
+			margin-bottom: 0;
+		}
+	}
+}

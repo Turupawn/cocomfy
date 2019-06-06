@@ -1,0 +1,21 @@
+<!-- section -->
+<div class="section border-top">
+  <div class="container">
+    <!-- box 1 -->
+    <div class="row align-items-center col-spacing-50">
+      <div class="col-12 col-md-6">
+        <img src="/images/col-2.jpg" alt="">
+      </div>
+      <div class="col-12 col-md-6">
+        <h6 class="heading-uppercase">Email unsubscription</h6>
+        <% if @error_message %>
+          <h4>Woops! Error found</h4>
+          <p><%= @error_message %></p>
+        <% else %>
+          <h4>You are now unsubscribed</h4>
+          <p>If you can re-subscribe anytime by clicking on your confirmation link again or by sending an email to us at contact@cocomfy.com</p>
+        <% end%>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,115 @@
+//
+// Timeline Styles //
+//
+.timeline-wrapper {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		background: $border-grey;
+		width: 1px;
+		height: 100%;
+	}
+	.timeline {
+		.timeline-date {
+			position: relative;
+			h1, h2, h3, h4, h5, h6 {
+				&:before {
+					content: '';
+		    		position: absolute;
+		    		top: 50%;
+		    		@include transform(translateY(-50%));
+		    		background: $color-dark;
+		    		width: 8px;
+		    		height: 8px;
+		    		border-radius: 50%;
+				}
+			}
+		}
+	}
+}
+@include breakpoint-above(lg) {
+	.timeline-wrapper {
+		position: relative;
+		&:before {
+			left: 50%;
+			@include transform(translateX(-50%));
+		}
+		.timeline {
+			position: relative;
+		    .timeline-date, .timeline-content {
+		    	width: 50%;
+		    	padding: 30px;
+		    }
+		    .timeline-date {
+		    	position: absolute;
+		    	top: 0;
+		    	left: 0;
+		    	text-align: right;
+		    	h1, h2, h3, h4, h5, h6 {
+		    		position: relative;
+		    		text-align: right;
+		    		&:before {
+			    		right: -34px;
+			    	}
+		    	}
+		    }
+		    .timeline-content {
+		    	margin-left: 50%;
+		    }
+		    &:nth-child(even) {
+		    	.timeline-date {
+		    		left: 50%;
+		    		text-align: left;
+		    		h1, h2, h3, h4, h5, h6 {
+		    			text-align: left;
+		    			&:before {
+		    				right: auto;
+		    				left: -34px;
+		    			}
+		    		}
+		    	}
+		    	.timeline-content {
+		    		margin-left: 0;
+		    		text-align: right;
+		    	}
+		    }
+		}
+	}
+}
+@include breakpoint-less(lg) {
+	.timeline-wrapper {
+		padding-left: 30px;
+		&:before {
+			left: 0;
+		}
+		.timeline {
+			margin-bottom: 50px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			.timeline-date {
+				h1, h2, h3, h4, h5, h6 {
+					&:before {
+						left: -34px;
+					}
+				}
+			}
+		}
+	}
+}
+@include breakpoint-less(sm) {
+	.timeline-wrapper {
+		padding-left: 20px;
+		.timeline {
+			.timeline-date {
+				h1, h2, h3, h4, h5, h6 {
+					&:before {
+						left: -24px;
+					}
+				}
+			}
+		}
+	}
+}

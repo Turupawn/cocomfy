@@ -1,0 +1,91 @@
+//
+// Mixins //
+//
+@mixin breakpoint-above($class) {
+  @if $class == xs {
+    @media (min-width: 0) { @content; }
+  }
+
+  @else if $class == sm {
+    @media (min-width: 576px) { @content; }
+  }
+ 
+  @else if $class == md {
+    @media (min-width: 768px) { @content; }
+  }
+ 
+  @else if $class == lg {
+    @media (min-width: 992px) { @content; }
+  }
+ 
+  @else if $class == xl {
+    @media (min-width: 1200px) { @content; }
+  }
+}
+@mixin breakpoint-less($class) {
+  @if $class == xs {
+    @media (max-width: 575px) { @content; }
+  }
+
+  @else if $class == sm {
+    @media (max-width: 576px) { @content; }
+  }
+ 
+  @else if $class == md {
+    @media (max-width: 768px) { @content; }
+  }
+ 
+  @else if $class == lg {
+    @media (max-width: 992px) { @content; }
+  }
+ 
+  @else if $class == xl {
+    @media (max-width: 1200px) { @content; }
+  }
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: $transition-delay;
+  transition-delay:         $transition-delay;
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  transform:         $transform;
+}
+@mixin transform-origin($transform-origin) {
+  -webkit-transform-origin: $transform-origin;
+  transform-origin:         $transform-origin;
+}
+
+@mixin filter($filter) {
+  -webkit-filter: $filter;
+  filter:         $filter;
+}
+
+@mixin box-shadow($box-shadow) {
+  -webkit-box-shadow: $box-shadow;
+  box-shadow:         $box-shadow;
+}
+
+@mixin box-sizing($box-sizing) {
+  -webkit-box-sizing: $box-sizing;
+  box-sizing:         $box-sizing;
+}
+
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  animation:         $animation;
+}
+@mixin animation-delay($animation-delay) {
+  -webkit-animation-delay: $animation-delay;
+  animation-delay:         $animation-delay;
+}
+@mixin animation-fill-mode($animation-fill-mode) {
+  -webkit-animation-fill-mode: $animation-fill-mode;
+  animation-fill-mode:         $animation-fill-mode;
+}

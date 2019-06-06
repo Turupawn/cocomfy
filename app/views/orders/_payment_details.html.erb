@@ -1,0 +1,36 @@
+<% if @is_payed %>
+<div class="section">
+  <div class="container">
+    <div class="row align-items-center col-spacing-50">
+      <div class="col-12 col-lg-4">
+
+      </div>
+      <div class="col-12 col-lg-8">
+        <h6 class="heading-uppercase">Order #<%= @order.hash_id %></h6>
+        <h3>Payment complete</h3>
+        <p>Thanks for your order!</p>
+      </div>
+    </div><!-- end row -->
+  </div><!-- end container -->
+</div>
+<% else %>
+<div class="section">
+  <div class="container">
+    <div class="row align-items-center col-spacing-50">
+      <div class="col-12 col-lg-4">
+        <div id="qrcode"></div>
+        <script type="text/javascript">
+          new QRCode(document.getElementById("qrcode"), "dogecoin:<%= @order.doge_address %>?amount=<%= @doges_pending %>");
+        </script>
+      </div>
+      <div class="col-12 col-lg-8">
+        <h6 class="heading-uppercase">Order #<%= @order.hash_id %></h6>
+        <h3>Please complete your payment</h3>
+        <p>Scan the QR code or deposit to the following dogecoin address to complete your order. Refresh when done.</p>
+        <p>Dogecoin address: <strong><%= @order.doge_address %></strong></p>
+        <p>Payment pending: <strong><%= @doges_pending %></strong></p>
+      </div>
+    </div><!-- end row -->
+  </div><!-- end container -->
+</div>
+<% end %>

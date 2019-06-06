@@ -1,0 +1,41 @@
+<div class="col-12 col-md-6 col-lg-4 product">
+  <div class="product-img">
+    <%= link_to @item do %>
+      <% if @item.image.file %>
+        <img src="<%= @item.image %>" alt="">
+      <% else %>
+        <img src="/images/col-3-tall.jpg" alt="">
+      <% end %>
+      <% if @current_coupon %>
+        <div class="product-sale">
+          <h6 class="heading-uppercase">-<%= @current_coupon.discount %>%</h6>
+        </div>
+      <% end %>
+    <% end %>
+    <div class="product-img-hover" style="background-color: #e67e22;-webkit-transform: translateY(0);transform: translateY(0);">
+      <h6 class="heading-uppercase">
+        <script>
+          $(document).on("click", "#your_link", function(){
+            $("#form").submit();
+          });
+        </script>
+        <%= form_tag(add_to_cart_path, method: "get", id: "form_" + @item.id.to_s) do %>
+          <%= hidden_field_tag(:item_id, @item.id) %>
+          <%= hidden_field_tag(:amount, "1") %>
+          <a href="javascript:{}" onclick="document.getElementById('form_<%= @item.id.to_s %>').submit(); return false;">Add to cart</a>
+        <% end %>
+      </h6>
+    </div>
+  </div><!-- end product-img -->
+  <div class="product-info">
+    <h6><%= link_to @item.name, @item %></h6>
+    <!-- Product Price -->
+    <div class="product-price">
+      <% if @current_coupon %>
+        <h6><span>Ð<%= @item.doges %></span>Ð<%= apply_discount(@item.doges, @current_coupon.discount) %> + shipping</h6>
+      <% else %>
+        <h6>Ð<%= @item.doges %> + shipping</h6>
+      <% end %>
+    </div>
+  </div>
+</div>

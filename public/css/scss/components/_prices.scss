@@ -1,0 +1,90 @@
+//
+// Prices Styles //
+//
+.prices-box {
+	border: 1px solid $border-grey;
+	padding: 30px;
+	text-align: center;
+	.price {
+		margin: 20px 0;
+		span {
+			display: block;
+			font: 300 14px $font-primary;
+			color: $color-primary-lighter;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			position: relative;
+			display: inline-block;
+			margin: 0;
+			&:before {
+				content: '\f155';
+				font-family: 'FontAwesome';
+				position: absolute;
+				top: 10px;
+				left: -10px;
+				font-size: 14px;
+				line-height: 14px;
+			}
+			span {
+				display: inline-block;
+				font: 300 14px $font-primary;
+				color: $color-primary-lighter;
+			}
+		}
+	}
+	.price-features {
+		ul {
+			margin: 0;
+			padding: 0;
+			li {
+				list-style-type: none;
+			}
+		}
+	}
+	.btn, .text-button, .button {
+		margin-top: 30px;
+	}
+	&.prices-box-recommended {
+		border-color: $color-dark;
+	}
+}
+
+.bg-grey, .bg-grey-lighter {
+	.prices-box {
+		background: $color-white;
+		border: 0;
+		&.prices-box-recommended {
+			background: $bg-dark-lighter;
+			color: $color-white-05;
+			h1, h2, h3, h4, h5, h6 {
+				color: $color-white;
+			}
+			.price {
+				h1, h2, h3, h4, h5, h6 {
+					span {
+						color: $color-white-05;
+					}
+				}
+			}
+			.btn, .button {
+				background: transparent;
+				border: 2px solid $color-white;
+				&:hover {
+					background: $color-white;
+					color: $color-dark;
+				}
+			}
+		}
+	}
+}
+
+.bg-dark, .bg-dark-lighter, 
+.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06,  .bg-black-07, .bg-black-08, .bg-black-09 {
+	.prices-box {
+		border-color: $color-white-02;
+		color: $color-white-05;
+		&.prices-box-recommended {
+			border-color: $color-white;
+		}
+	}
+}

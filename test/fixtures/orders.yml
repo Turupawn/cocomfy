@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  shipping_type_id: 1
+  traking_info: MyText
+  first_name: MyString
+  last_name: MyString
+  postal_code: MyString
+  shipping_address: MyText
+  order_state_id: 1
+  doge_address: MyString
+  subtotal_doges: 9.99
+  shipping_doges: 9.99
+  total_doges: 9.99
+
+two:
+  email: MyString
+  shipping_type_id: 1
+  traking_info: MyText
+  first_name: MyString
+  last_name: MyString
+  postal_code: MyString
+  shipping_address: MyText
+  order_state_id: 1
+  doge_address: MyString
+  subtotal_doges: 9.99
+  shipping_doges: 9.99
+  total_doges: 9.99

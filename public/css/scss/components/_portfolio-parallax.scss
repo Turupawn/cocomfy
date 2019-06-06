@@ -1,0 +1,65 @@
+//
+// Parallax Portfolio Styles //
+//
+.parallax-portfolio-item {
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center center;
+	height: 500px;
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		.parallax-portfolio-content {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: $color-black-01;
+			width: 100%;
+			height: 100%;
+			color: $color-white-07;
+			@include transition(ease-out 0.2s);
+			div {
+				position: absolute;
+				top: 30px;
+				left: 30px;
+				h1, h2, h3, h4, h5, h6 {
+					margin-bottom: 5px;
+					color: $color-white;
+				}
+				span {
+					display: inline-block;
+					margin-bottom: 5px;
+				}
+			}
+			i {
+				position: absolute;
+				right: 30px;
+				bottom: 30px;
+				@include transform(translateY(5px));
+				opacity: 0;
+				color: $color-white;
+				font-size: 20px;
+				@include transition(ease-out 0.2s);
+			}
+		}
+		&:hover {
+			.parallax-portfolio-content {
+				background: $color-black-03;
+				i {
+					@include transform(translateY(0));
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+//
+// Responsive Styles //
+//
+@include breakpoint-less(md) {
+	.parallax-portfolio-item {
+		height: 400px;
+	}
+}

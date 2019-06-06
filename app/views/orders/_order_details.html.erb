@@ -1,0 +1,36 @@
+<div class="section">
+  <div class="container">
+    <div class="row align-items-center col-spacing-50">
+      <div class="col-12 col-lg-8">
+        <h3>Order details</h3>
+        <p>Order id: <strong><%= @order.hash_id %></strong>. Use this id while contacting customer support.</p>
+        <p>Order state: <strong><%= @order.order_state.name %></strong></p>
+        <p>Use <a href="http://cocomfy.com/orders/<%= @order.hash_id%>?secure_hash=<%= @order.secure_hash %>">this link</a> or an email we just sent you to track your order process.</p>
+        <p>Email: <strong><%= @order.email %></strong></p>
+        <h3>Shipping details</h3>
+        <p>First name: <strong><%= @order.first_name %></strong></p>
+        <p>Last name: <strong><%= @order.last_name %></strong></p>
+        <p>Shipping region: <strong><%= @order.shipping_type.name %></strong></p>
+        <p>Postal code: <strong><%= @order.postal_code %></strong></p>
+        <p>Shipping address: <strong><%= @order.shipping_address %></strong></p>
+        <p>Traking info: <strong><%= @order.traking_info %></strong></p>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="payment-detail-box">
+          <h5 class="margin-bottom-20">Your Order</h5>
+          <h6 class="heading-uppercase">Products:</h6>
+          <ul class="payment-detail-product-list">
+            <% @order.order_items.each do |order_item| %>
+              <li><%= order_item.item.name %><span class="payment-detail-product-quantity"><%= order_item.amount %></span><span>Ð<%= order_item.doges %></span></li>
+            <% end %>
+          </ul>
+          <ul>
+            <li><h6 class="heading-uppercase">Subtotal:</h6><span>Ð<%= @order.subtotal_doges %></span></li>
+            <li><h6 class="heading-uppercase">Shipping:</h6><span>Ð<%= @order.shipping_doges %></span></li>
+            <li><h6 class="heading-uppercase">Total:</h6><span class="text-dark">Ð<%= @order.total_doges %></span></li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- end row -->
+  </div><!-- end container -->
+</div>

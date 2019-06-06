@@ -1,0 +1,119 @@
+//
+// Clients Styles //
+//
+.client-box {
+	a {
+		img {
+			opacity: 0.7;
+			@include transition(ease-out 0.2s);
+		}
+		&:hover, &:focus {
+			img {
+				opacity: 1;
+			}
+		}
+	}
+}
+//
+// Clients Grid //
+//
+.clients-grid {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	
+	li {
+		list-style-type: none;
+		position: relative;
+		float: left;
+		width: 16.6%;
+		margin: 0;
+		padding: 20px;
+		&:before, &:after {
+			content: '';
+			position: absolute;
+		}
+		&:before {
+			top: 0;
+			left: -1px;
+			height: 100%;
+			border-left: 1px dashed $color-black-01;
+		}
+		&:after {
+			left: 0;
+			bottom: -1px;
+			width: 100%;
+			border-bottom: 1px dashed $color-black-01;
+		}
+		a {
+			img {
+				opacity: 0.7;
+				@include transition(ease-out 0.2s);
+			}
+			&:hover, &:focus {
+				img {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	@include breakpoint-less(lg) {
+		li { width: 25%; }
+	}
+	@include breakpoint-less(md) {
+		li { width: 33.3%; }
+	}
+	@include breakpoint-less(sm) {
+		li { width: 50%; }
+	}
+
+	&.column-5 {
+		li {
+			width: 20%;
+		}
+		@include breakpoint-less(lg) {
+			li { width: 25%; }
+		}
+		@include breakpoint-less(md) {
+			li { width: 33.3%; }
+		}
+		@include breakpoint-less(sm) {
+			li { width: 50%; }
+		}
+	}
+	&.column-4 {
+		li {
+			width: 25%;
+		}
+		@include breakpoint-less(md) {
+			li { width: 33.3%; }
+		}
+		@include breakpoint-less(sm) {
+			li { width: 50%; }
+		}
+	}
+	&.column-3 {
+		li {
+			width: 33.3%;
+		}
+		@include breakpoint-less(md) {
+			li { width: 50%; }
+		}
+	}
+	&.column-2 {
+		li {
+			width: 50%;
+		}
+	}
+}
+.bg-dark, .bg-dark-lighter, 
+.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06,  .bg-black-07, .bg-black-08, .bg-black-09 {
+	.clients-grid {
+		li {
+			&:before, &:after {
+				border-color: $color-white-02;
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+<div class="ui transition information visible" style="">
+<p class="ui centered lead"></p>
+
+</div>
+
+
+<!-- Contact Info section -->
+<div class="section">
+  <div class="container">
+    <div class="row text-center">
+      <!-- Icon text box 1 -->
+      <div class="col-12 col-sm-12 col-md-12">
+        <form class="margin-bottom-20" action="/subscribe" method="post">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <div class="fields">
+            <div class="four wide field">
+            </div>
+            <div class="eight wide field">
+              <div class="ui right action input">
+                <h4 class="margin-bottom-20">Subscribe to receive special offers and updates straight to your inbox</h4>
+                <input name="email" class="margin-bottom-10" placeholder="youremail@example.com" type="text">
+                <button type="submit" class="button button-xl button-dark button-fullwidth">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div><!-- end row -->
+  </div><!-- end container -->
+</div>
+<!-- end Contact Info section -->

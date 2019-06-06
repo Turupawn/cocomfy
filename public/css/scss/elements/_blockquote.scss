@@ -1,0 +1,27 @@
+//
+// Blockquote Styles //
+//
+.blockquote {
+	background: $bg-grey-lighter;
+	margin-bottom: 20px;
+	padding: 30px;
+	p {
+		font-size: 20px;
+		line-height: 36px;
+	}
+	.blockquote-footer {
+		margin-top: 10px;
+		color: $color-dark;
+		&:before {
+			padding-right: 5px;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			display: inline-block;
+			margin: 0;
+		}
+		p {
+			font-size: 16px;
+			line-height: 30px;
+		}
+	}
+}

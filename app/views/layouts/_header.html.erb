@@ -1,0 +1,46 @@
+<header>
+  <!-- navbar -->
+  <nav class="navbar navbar-sticky"><!-- add 'navbar-dark/navbar-grey/navbar-transparent/navbar-transparent-dark' -->
+    <div class="container text-center">
+      <a class="navbar-brand" href="<%= root_path %>">
+        <h5>cocomfy.com</h5>
+      </a>
+      <ul class="nav">
+        <% if user_signed_in? %>        
+          <li class="nav-item">
+            <%= link_to "My account", orders_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-link'  %>          
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <% if !Setting.maintenance %>
+              <%= link_to "Sign up", new_user_registration_path, class: 'nav-link'  %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: 'nav-link'  %>
+          </li>
+          <% end %>
+      </ul>
+      <ul class="list-horizontal-unstyled position-center position-lg-right">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li>
+          <a href="<%= new_order_path %>"><i class="fa fa-shopping-cart"></i></a>
+          <% if session[:cart] && session[:cart].size > 0 %>
+            <lavel id="cart-badge" class="badge badge-warning"><%= session[:cart].size %></lavel>
+          <% end %>
+        </li>
+      </ul>
+      <!-- Nav Toggle button -->
+      <button class="nav-toggle-btn">
+              <span class="lines"></span>
+          </button><!-- toggle button will show when screen resolution is less than 992px -->
+    </div><!-- end container -->
+  </nav><!-- end navbar -->
+</header>

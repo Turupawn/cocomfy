@@ -1,0 +1,71 @@
+//
+// Progress bar Styles //
+//
+.progress-box {
+	margin-bottom: 25px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 0;
+	}
+	
+	.progress, 
+	.progress-bar {
+		height: 1px;
+		box-shadow: none;
+		border-radius: 0;
+	}
+	.progress {
+		overflow: visible;
+		background: $color-black-01;
+		margin: 0;
+		padding: 0;
+		.progress-bar {
+			position: relative;
+			background: $color-black-09;
+			width: 30%;
+			border: none;
+			color: $color-black-09;
+			span {
+				position: absolute;
+				top: -23px;
+				right: 0;
+				font-size: 14px;
+			}
+		}
+		&.progress-radius {
+			border-radius: 10px;
+			.progress-bar { border-radius: 10px; }
+		}
+		&.progress-height-2px {
+			height: 2px;
+			.progress-bar { height: 2px; }
+		}
+		&.progress-height-3px {
+			height: 3px;
+			.progress-bar { height: 3px; }
+		}
+		&.progress-height-4px {
+			height: 4px;
+			.progress-bar { height: 4px; }
+		}
+		&.progress-height-5px {
+			height: 5px;
+			.progress-bar { height: 5px; }
+		}
+	}
+}
+.bg-dark, .bg-dark-lighter, 
+.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06,  .bg-black-07, .bg-black-08, .bg-black-09 {
+	.progress-box {
+		.progress {
+			background: $color-white-02;
+			.progress-bar {
+				background: $color-white;
+				color: $color-white;
+			}
+		}
+	}
+}

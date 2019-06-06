@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to cocomfy's subscription!</h1>
+    <p>
+      Take this coupon as thanks on our part: <%= Coupon.first.name %> for a <%= Coupon.first.discount %> % off
+      So you can <a href="https://cocomfy.com/items">start shopping right away</a>!
+    </p>
+
+    <p>
+      If you wish to unsubscribe click on <a href="<%= @unsubscribe_link %>">this unsubscription link</a>. If you want to resubscribe later on click on the confirmation email sent on the previos message or contact us at contact@cocomfy.com.
+    </p>
+  </body>
+</html>

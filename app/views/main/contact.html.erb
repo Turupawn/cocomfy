@@ -1,0 +1,44 @@
+<!-- Google Maps section -->
+<div class="section">
+  <div class="container">
+    <div class="section-title text-center">
+      <h3>Get In Touch</h3>
+      <p>Do you have a questions, feedback or want to make a partnership? Send us an email, we  would like to hear from you.</p>
+    </div>
+    <div id="map-canvas" class="gmap-md" data-latitude="15.5197325" data-longitude="-88.0205089"></div>
+  </div><!-- end container -->
+</div>
+<!-- end Google Maps section -->
+
+<!-- Contact Info section -->
+<div class="section no-padding-top">
+  <div class="container">
+    <div class="row text-center">
+      <!-- Icon text box 1 -->
+      <div class="col-12 col-sm-6 col-md-6 icon-3xl">
+        <i class="ti ti-email text-dark"></i>
+        <h6 class="heading-uppercase margin-top-20">Email</h6>
+        <p>contact@cocomfy.com</p>
+      </div>
+      <!-- Icon text box 3 -->
+      <div class="col-12 col-sm-6 col-md-6 icon-3xl">
+        <i class="ti ti-location-pin text-dark"></i>
+        <h6 class="heading-uppercase margin-top-20">Address</h6>
+        <p>Bo El Centro, San Pedro Sula Honduras 21102</p>
+      </div>
+    </div><!-- end row -->
+  </div><!-- end container -->
+</div>
+<!-- end Contact Info section -->
+
+<script>
+function initMap() {} // now it IS a function and it is in global
+$(() => {
+  initMap = function() {
+  }
+})
+</script>
+
+<script src="/plugins/gmaps.min.js"></script>
+<script src="/js/functions.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxwjeo7DBUnRGcQfoRdtGicWGU1GswTGw&callback=initMap"></script>

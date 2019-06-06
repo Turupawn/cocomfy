@@ -1,0 +1,43 @@
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-12">
+        <h2>Orders</h2>
+        <div class="table-responsive">
+          <table class="product-table">
+            <thead>
+              <tr>
+                <th scope="col"><h6 class="heading-uppercase no-margin">Order number</h6></th>
+                <th scope="col"><h6 class="heading-uppercase no-margin">Date Ordered</h6></th>
+                <th scope="col"><h6 class="heading-uppercase no-margin">Total</h6></th>
+                <th scope="col"><h6 class="heading-uppercase no-margin">Order status</h6></th>
+                <th scope="col"><h6 class="heading-uppercase no-margin">Tracking info</h6></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @orders.each do |order| %>
+                <tr>
+                  <td><%= link_to order.hash_id, order_path(order, secure_hash: order.secure_hash) %></td>
+                  <td><%= order.created_at.to_date %></td>
+                  <td>Ð <%= order.total_doges %></td>
+                  <td><%= order.order_state.name %></td>
+                  <td><%= order.traking_info %></td>
+                  <% if current_user_is_admin %>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-12">
+        <h2>Settings</h2>
+        <p><%= link_to "Change password", edit_user_registration_path %></p>
+      </div>
+    </div>
+  </div>
+</div>

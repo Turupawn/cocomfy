@@ -1,0 +1,27 @@
+<h1>Shipping Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Doges per kilo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shipping_types.each do |shipping_type| %>
+      <tr>
+        <td><%= shipping_type.name %></td>
+        <td><%= shipping_type.doges_per_kilo %></td>
+        <td><%= link_to 'Show', shipping_type %></td>
+        <td><%= link_to 'Edit', edit_shipping_type_path(shipping_type) %></td>
+        <td><%= link_to 'Destroy', shipping_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shipping Type', new_shipping_type_path %>

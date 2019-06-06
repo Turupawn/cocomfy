@@ -1,0 +1,28 @@
+//
+// Icon box Styles //
+//
+.icon-left-box, 
+.icon-box-1 {
+	position: relative;
+	padding-left: 60px;
+	i {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+//
+// Icon box layout 2 //
+//
+.icon-box-2 {
+	.icon-box-holder {
+		position: relative;
+		padding-left: 64px;
+		i {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			@include transform(translateY(-50%));
+		}
+	}
+}

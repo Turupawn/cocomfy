@@ -1,0 +1,15 @@
+<div>
+  <form class="margin-bottom-20" action="/apply_coupon" method="get">
+    <% if @current_coupon %>
+      <div class="field">
+        <input type="text" class="margin-bottom-10" style="text-transform: uppercase" name="coupon_code" placeholder="<%= @current_coupon.name %>">
+      </div>
+      <input type="submit" class="btn btn-lg btn-light btn-block" value="Change coupon"/>
+    <% else %>
+      <div class="field">
+        <input type="text" class="margin-bottom-10" style="text-transform: uppercase" name="coupon_code" placeholder="Coupon code">
+      </div>
+      <input type="submit" class="btn btn-lg btn-light btn-block" value="Apply"/>
+    <% end %>
+  </form>
+</div>

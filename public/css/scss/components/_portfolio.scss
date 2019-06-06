@@ -1,0 +1,594 @@
+//
+// Portfolio Styles //
+//
+.portfolio-wrapper {
+	&.row {
+		margin: 0;
+		div[class^="col-"], div[class*=" col-"] {
+			margin: 0;
+		}
+	}
+	.portfolio-item {
+		width: 100%;
+		text-align: left;
+	}
+	//
+	// Portfolio Columns //
+	//
+	&.column-1 {
+		.portfolio-item { width: 100%; }
+	}
+	&.column-2 {
+		@include breakpoint-above(md) {
+			.portfolio-item { width: 50%; }
+		}
+	}
+	&.column-3 {
+		@include breakpoint-above(md) {
+			.portfolio-item { width: 50%; }
+		}
+		@include breakpoint-above(lg) {
+			.portfolio-item { width: 33.33%; }
+		}
+	}
+	&.column-4 {
+		@include breakpoint-above(sm) {
+			.portfolio-item { width: 50%; }
+		}
+		@include breakpoint-above(md) {
+			.portfolio-item { width: 33.33%; }
+		}
+		@include breakpoint-above(lg) {
+			.portfolio-item { width: 25%; }
+		}
+	}
+	&.column-5 {
+		@extend .column-4;
+		@include breakpoint-above(xl) {
+			.portfolio-item { width: 20%; }
+		}
+	}
+	&.column-6 {
+		@extend .column-4;
+		@include breakpoint-above(xl) {
+			.portfolio-item { width: 16.66%; }
+		}
+	}
+	&.column-7 {
+		@extend .column-4;
+		@include breakpoint-above(xl) {
+			.portfolio-item { width: 14.28%; }
+		}
+	}
+	&.column-8 {
+		@extend .column-4;
+		@include breakpoint-above(xl) {
+			.portfolio-item { width: 12.5%; }
+		}
+	}
+	&.column-9 {
+		@extend .column-4;
+		@include breakpoint-above(xl) {
+			.portfolio-item { width: 11.11%; }
+		}
+	}
+	&.column-10 {
+		@extend .column-4;
+		@include breakpoint-above(xl) {
+			.portfolio-item { width: 10%; }
+		}
+	}
+	&.column-11 {
+		@extend .column-4;
+		@include breakpoint-above(xl) {
+			.portfolio-item { width: 9.09%; }
+		}
+	}
+	&.column-12 {
+		@extend .column-4;
+		@include breakpoint-above(xl) {
+			.portfolio-item { width: 8.33%; }
+		}
+	}
+	//
+	// Portfolio box spacings //
+	//
+	&.no-spacing { 
+		.portfolio-item { padding: 0; }
+	}
+	&.spacing-6 {
+		.portfolio-item { padding: 3px; }
+	}
+	&.spacing-10 {
+		.portfolio-item { padding: 5px; }
+	}
+	&.spacing-20 {
+		.portfolio-item { padding: 10px; }
+	}
+	&.spacing-30 {
+		.portfolio-item { padding: 15px; }
+	}
+	&.spacing-40 {
+		.portfolio-item { padding: 20px; }
+	}
+	&.spacing-50 {
+		.portfolio-item { padding: 25px; }
+	}
+}
+
+.container {
+	.portfolio-wrapper {
+		&.no-spacing {
+			margin: 0;
+		}
+		&.spacing-6 {
+			margin: -3px;
+		}
+		&.spacing-10 {
+			margin: -5px;
+		}
+		&.spacing-20 {
+			margin: -10px;
+		}
+		&.spacing-30 {
+			margin: -15px;
+		}
+		&.spacing-40 {
+			margin: -20px;
+		}
+		&.spacing-50 {
+			margin: -25px;
+		}
+	}
+}
+.container-fluid {
+	.portfolio-wrapper {
+		margin: 0 -20px;
+		&.no-spacing {
+			margin: 0 -20px;
+		}
+		&.spacing-6 {
+			margin: -3px -17px 3px;
+		}
+		&.spacing-10 {
+			margin: -5px -15px 5px;
+		}
+		&.spacing-20 {
+			margin: -10px -10px 10px;
+		}
+		&.spacing-30 {
+			margin: -15px -5px 15px;
+		}
+		&.spacing-40 {
+			margin: -20px 0 20px;
+		}
+		&.spacing-50 {
+			margin: -25px 5px 25px;
+		}
+	}
+}
+
+//
+// Portfolio Filter Styles //
+//
+.filter {
+	margin-bottom: 70px;
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			display: inline-block;
+			background: $button-grey-lighter;
+			border-radius: 30px;
+			margin-right: 10px;
+			padding: 7px 15px;
+			font: 400 13px $font-primary;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+			cursor: pointer;
+			@include transition(linear 0.1s);
+			&:last-child {
+				margin-right: 0;
+			}
+			&:hover {
+				background: $button-grey;
+			}
+			&.active {
+				background: $bg-dark;
+				color: $color-white;
+			}
+		}
+	}
+	&.filter-font-2 {
+		ul {
+			li {
+				font: 400 15px $font-primary;
+				letter-spacing: 0;
+				text-transform: none;
+			}
+		}
+	}
+	&.filter-style-2 {
+		ul {
+			margin-bottom: -20px;
+			li {
+				background: transparent;
+				margin: 0 30px 20px 0;
+				padding: 0;
+				color: $color-primary-lighter;
+				&:last-child {
+					margin-right: 0;
+				}
+				&:hover, &.active {
+					background: transparent;
+					color: $color-dark;
+				}
+			}
+		}
+	}
+	&.filter-style-3 {
+		ul {
+			li {
+				background: transparent;
+				margin-right: 5px;
+				color: $color-primary-lighter;
+				&:last-child {
+					margin-right: 0;
+				}
+				&:hover, &.active {
+					color: $color-dark;
+				}
+				&.active {
+					background: $button-grey-lighter;
+				}
+			}
+		}
+	}
+	&.filter-style-4 {
+		ul {
+			margin-bottom: -20px;
+			li {
+				position: relative;
+				background: transparent;
+				margin: 0 30px 20px 0;
+				padding: 0;
+				color: $color-primary-lighter;
+				&:last-child {
+					margin-right: 0;
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: -6px;
+					left: 0;
+					background: $bg-dark;
+					width: 0;
+					height: 1px;
+					@include transition(ease-out 0.2s);
+				}
+				&:hover, &.active {
+					color: $color-dark;
+				}
+				&.active {
+					&:after {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+.bg-dark, .bg-dark-lighter, 
+.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06, .bg-black-07, .bg-black-08, .bg-black-09 {
+	.filter {
+		ul {
+			li {
+				background: transparent;
+				color: $color-white-07;
+				&:hover {
+					background: transparent;
+					color: $color-white;
+				}
+				&.active {
+					background: $color-white;
+					color: $color-dark;
+				}
+			}
+		}
+		&.filter-style-2 {
+			ul {
+				li {
+					background: transparent;
+					color: $color-white-07;
+					&:hover, &.active {
+						background: transparent;
+						color: $color-white;
+					}
+				}
+			}
+		}
+		&.filter-style-3 {
+			ul {
+				li {
+					color: $color-white-07;
+					&:hover, &.active {
+						color: $color-white;
+					}
+					&.active {
+						background: $color-white;
+						color: $color-dark;
+					}
+				}
+			}
+		}
+		&.filter-style-4 {
+			ul {
+				li {
+					color: $color-white-07;
+					&:after {
+						background: $color-white;
+					}
+					&:hover, &.active {
+						color: $color-white;
+					}
+					&.active {
+						background: transparent;
+					}
+				}
+			}
+		}
+	}
+}
+
+//
+// Hover Styles //
+//
+.portfolio-item {
+	.portfolio-box {
+		position: relative;
+
+		.portfolio-img {
+			position: relative;
+			overflow: hidden;
+			img {
+				@include transform(scale(1));
+				width: 100%;
+				@include transition(ease-out 0.2s);
+			}
+		}
+
+		a {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.portfolio-title {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			background: $color-black-07;
+			width: 100%;
+			height: 100%;
+			color: $color-white-07;
+			@include transition(ease-out 0.2s);
+
+			div {
+				position: absolute;
+				left: 30px;
+				bottom: 30px;
+
+				h1, h2, h3, h4, h5, h6, span {
+					opacity: 0;
+					@include transform(translateY(5px));
+					@include transition(ease-out 0.2s);
+				}
+				h1, h2, h3, h4, h5, h6 {
+					margin-bottom: 5px;
+					color: $color-white;
+					@include transition-delay(0.1s);
+				}
+				span {
+					display: inline-block;
+					margin-bottom: 5px;
+					@include transition-delay(0.2s);
+					
+				}
+			}
+		}
+
+		&:hover {
+			.portfolio-title {
+				opacity: 1;
+				h1, h2, h3, h4, h5, h6, span {
+					opacity: 1;
+					@include transform(translateY(0));
+				}
+
+			}
+			.portfolio-img {
+				img {
+					@include transform(scale(1.05));
+					@include filter(blur(2px));
+				}
+			}
+		}
+	}
+}
+
+//
+// Hover Style 2 //
+//
+.hover-style-2 {
+	.portfolio-item {
+		.portfolio-box {
+			.portfolio-img {
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+					opacity: 0;
+					background: $color-white-01;
+					width: 100%;
+					height: 100%;
+					@include transition(ease-out 0.2s);
+				}
+			}
+			.portfolio-title {
+				position: static;
+				opacity: 1;
+				background: transparent;
+				padding: 20px;
+				color: $color-dark;
+				div {
+					position: static;
+					left: 0;
+					bottom: 0;
+					h1, h2, h3, h4, h5, h6 {
+						opacity: 1;
+						@include transform(translateY(0));
+						color: $color-dark;
+					}
+					span {
+						opacity: 1;
+						@include transform(translateY(0));
+						color: $color-primary;
+					}
+				}
+			}
+			&:hover {
+				.portfolio-img {
+					img {
+						@include transform(scale(1.02));
+						@include filter(blur(0px));
+					}
+					&:before {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
+.bg-dark, .bg-dark-lighter, 
+.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06, .bg-black-07, .bg-black-08, .bg-black-09 {
+	.hover-style-2 {
+		.portfolio-item {
+			.portfolio-box {
+				.portfolio-title {
+					div {
+						h1, h2, h3, h4, h5, h6 {
+							color: $color-white;
+						}
+						span {
+							color: $color-white-07;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//
+// Hover Style 3 //
+//
+.hover-style-3 {
+	.portfolio-item {
+		.portfolio-box {
+			.portfolio-title {
+				opacity: 1;
+				background: $color-black-01;
+				div {
+					top: 30px;
+					bottom: auto;
+					h1, h2, h3, h4, h5, h6, span {
+						opacity: 1;
+						@include transform(translateY(0));
+						@include transition(ease-out 0.2s);
+					}
+					span {
+						margin-bottom: 5px;
+					}
+				}
+				i {
+					position: absolute;
+					right: 30px;
+					bottom: 30px;
+					@include transform(translateY(5px));
+					opacity: 0;
+					color: $color-white;
+					@include transition(ease-out 0.2s);
+				}
+			}
+			&:hover {
+				.portfolio-title {
+					background: $color-black-03;
+					i {
+						@include transform(translateY(0));
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+//
+// Hover Style 4 //
+//
+.hover-style-4 {
+	.portfolio-item {
+		.portfolio-box {
+			overflow: hidden;
+			.portfolio-title {
+				top: auto;
+				right: auto;
+				bottom: 0;
+				left: 0;
+				@include transform(translateY(100%));
+				opacity: 1;
+				background: $bg-dark;
+				height: auto;
+				padding: 15px 30px;
+				@include transition(ease-out 0.2s);
+				div {
+					position: static;
+					opacity: 1;
+					h1, h2, h3, h4, h5, h6, span {
+						opacity: 1;
+						@include transform(translateY(0));
+					}
+					h1, h2, h3, h4, h5, h6 {
+						margin: 0;
+					}
+					span {
+						position: absolute;
+						top: 50%;
+						right: 30px;
+						@include transform(translateY(-50%));
+						line-height: 100%;
+					}
+				}
+			}
+			&:hover {
+				.portfolio-title {
+					@include transform(translateY(0));
+				}
+				.portfolio-img {
+					img {
+						@include transform(translateY(-20px));
+						@include filter(blur(0px));
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+<div class="section">
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-lg-6 center-block">
+      <h4 class="margin-bottom-20">Select your shipping region</h4>
+      <div class="col-12 col-sm-12">
+        <%= form_tag(select_shipping_path, method: "get") do %>
+          <%= collection_select :shipping_type, :id, ShippingType.all, :id, :name, {}, {:class=>'custom-select custom-select-lg select-fullwidth margin-bottom-10'} %>
+          <%= submit_tag("Select", class: "button button-xl button-dark button-fullwidth") %>
+        <% end %>
+      </div>
+    </div>
+  </div><!-- end row -->
+</div><!-- end container -->
+</div>

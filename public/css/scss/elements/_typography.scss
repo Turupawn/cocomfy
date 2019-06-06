@@ -1,0 +1,99 @@
+//
+// Typography Styles //
+//
+body {
+	color: $color-primary;
+	font: 300 16px $font-primary;
+	letter-spacing: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 10px;
+	letter-spacing: 0;
+	color: $color-dark;
+	font-weight: $font-weight-bold;
+}
+h1 {
+	font-size: 40px;
+	line-height: 56px;
+}
+h2 {
+	font-size: 32px;
+	line-height: 48px;
+}
+h3 {
+	font-size: 28px;
+	line-height: 44px;
+}
+h4 {
+	font-size: 24px;
+	line-height: 40px;
+}
+h5 {
+	font-size: 20px;
+	line-height: 36px;
+}
+h6 {
+	font-size: 16px;
+	line-height: 30px;
+}
+
+p {
+	margin: 0;
+	line-height: 30px;
+}
+.lead {
+	line-height: 36px;
+}
+
+.display-1 {
+	font-size: 96px;
+}
+.display-2 {
+	font-size: 88px;
+}
+.display-3 {
+	font-size: 72px;
+}
+.display-4 {
+	font-size: 56px;
+}
+
+.heading-uppercase {
+	font-weight: 400;
+	font-size: 13px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+}
+.uppercase {
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+i {
+	display: inline-block;
+}
+
+//
+// Icon sizes //
+//
+.icon-5xl {
+	i { font-size: 40px; }
+}
+.icon-4xl {
+	i { font-size: 36px; }
+}
+.icon-3xl {
+	i { font-size: 32px; }
+}
+.icon-2xl {
+	i { font-size: 28px; }
+}
+.icon-xl {
+	i { font-size: 24px; }
+}
+.icon-lg {
+	i { font-size: 20px; }
+}
+.icon-sm {
+	i { font-size: 14px; }
+}

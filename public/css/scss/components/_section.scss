@@ -1,0 +1,101 @@
+//
+// Sections Styles //
+//
+.section-xs {
+	padding: 50px 0;
+	&.bg-image {
+		padding: 0;
+		.container, .container-fluid {
+			padding: 50px 20px;
+		}
+	}
+}
+.section-sm {
+	padding: 70px 0;
+	&.bg-image {
+		padding: 0;
+		.container, .container-fluid {
+			padding: 70px 20px;
+		}
+	}
+}
+.section, .section-md {
+	padding: 100px 0;
+	&.bg-image {
+		padding: 0;
+		.container, .container-fluid {
+			padding: 100px 20px;
+		}
+	}
+}
+.section-lg {
+	padding: 160px 0;
+	&.bg-image {
+		padding: 0;
+		.container, .container-fluid {
+			padding: 160px 20px;
+		}
+	}
+}
+.section-xl {
+	padding: 200px 0;
+	&.bg-image {
+		padding: 0;
+		.container, .container-fluid {
+			padding: 200px 20px;
+		}
+	}
+}
+
+.section-title {
+	position: relative;
+	margin-bottom: 70px;
+	p {
+		max-width: 700px;
+		margin-bottom: 10px;
+	}
+	&.text-center {
+		p {
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+	&.text-right {
+		p {
+			margin-left: auto;
+		}
+	}
+	.btn, .button, .text-btn {
+		margin-bottom: 10px;
+	}
+}
+.text-center {
+	.section-title {
+		p {
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}
+.text-right {
+	.section-title {
+		p {
+			margin-left: auto;
+		}
+	}
+}
+
+//
+// Home Section - Fullscreen //
+//
+.section-fullscreen {
+	width: 100%;
+	height: 100%;
+	.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06,  .bg-black-07, .bg-black-08, .bg-black-09, 
+	.bg-white-01, .bg-white-02, .bg-white-03, .bg-white-04, .bg-white-05, .bg-white-06,  .bg-white-07, .bg-white-08, .bg-white-09  {
+		height: 100%;
+	}
+	.container, .container-fluid {
+		height: 100%;
+	}
+}

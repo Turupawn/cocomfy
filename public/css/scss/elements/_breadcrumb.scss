@@ -1,0 +1,97 @@
+//
+// Breadcrumb Styles //
+//
+.breadcrumb {
+	display: inline-block;
+	background: transparent;
+	margin: 10px 0 0;
+	padding: 0;
+	.breadcrumb-item {
+		display: inline-block;
+		font: 400 13px $font-primary;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		&:before, &.active {
+			color: $color-primary-lighter;
+		}
+		a {
+			@include transition(linear 0.1s);
+		}
+	}
+	&.dot {
+		.breadcrumb-item {
+			&:before {
+				content: '';
+				position: relative;
+				top: 50%;
+				left: 0;
+				@include transform(translateY(-50%));
+				background: $color-primary-lighter;
+				width: 4px;
+				height: 4px;
+				border-radius: 50%;
+				margin: 0 8px;
+				padding: 0;
+			}
+			&:first-child {
+				&:before {
+					content: '';
+					width: 0;
+					height: 0;
+					margin: 0;
+				}
+			}
+		}
+	}
+	&.line, &.angle {
+		.breadcrumb-item {
+			&:before {
+				color: $color-primary-lighter;
+			}
+			&:first-child {
+				&:before {
+					content: '';
+				}
+			}
+		}
+	}
+	&.line {
+		.breadcrumb-item {
+			&:before {
+				content: '-';
+			}
+		}
+	}
+	&.angle {
+		.breadcrumb-item {
+			&:before {
+				content: '»';
+			}
+		}
+	}
+}
+
+.bg-dark, .bg-dark-lighter, 
+.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06,  .bg-black-07, .bg-black-08, .bg-black-09 {
+	.breadcrumb {
+		.breadcrumb-item {
+			&:before, &.active {
+				color: $color-white-05;
+			}
+		}
+		&.dot {
+			.breadcrumb-item {
+				&:before {
+					background: $color-white-05;
+				}
+			}
+		}
+		&.line, &.angle {
+			.breadcrumb-item {
+				&:before {
+					color: $color-white-05;
+				}
+			}	
+		}
+	}
+}

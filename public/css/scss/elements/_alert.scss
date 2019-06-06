@@ -1,0 +1,11 @@
+//
+// Alert Styles //
+//
+.alert {
+	a {
+		&:hover { text-decoration: underline; }
+	}
+	&.alert-secondary { background: $button-grey; border-color: $button-grey-darker; }
+	&.alert-light { background: $bg-grey-lighter; border-color: $bg-grey; }
+	&.alert-dark { background: $button-grey-darker; border-color: $button-grey-darkest; }
+}

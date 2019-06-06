@@ -1,0 +1,1213 @@
+//
+// Header Top bar //
+//
+.header-top {
+	background: $bg-dark;
+	padding: 20px 0;
+	color: $color-white-05;
+	.row {
+		margin-bottom: -20px;
+		div[class^="col-"], div[class*=" col-"] {
+			margin-bottom: 20px;
+		}
+	}
+	a {
+		color: $color-white-07;
+		@include transition(linear 0.1s);
+		&:hover {
+			color: $color-white;
+		}
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			list-style-type: none;
+			display: inline-block;
+			margin: 0 20px 0 0;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+//
+// Header Navbar Styles //
+//
+.navbar {
+	z-index: 3;
+	background: $color-white;
+	height: 80px;
+	padding: 0;
+	@include transition(ease-out 0.2s);
+
+	.container-fluid {
+		padding: 0 30px;
+	}
+	.row {
+		width: 100%;
+		margin: 0;
+		div[class^="col-"], div[class*=" col-"] {
+			margin: 0;
+			padding: 0;
+		}
+	}
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			list-style-type: none;
+			margin: 0;
+		}
+		&.list-horizontal-unstyled {
+			li {
+				margin: 0 20px 0 0;
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+	}
+	
+	.navbar-brand {
+		margin-right: 2rem;
+		img {
+			max-height: 40px;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			display: inline-block;
+		}
+	}
+
+	.nav {
+		.nav-item {
+			.nav-link {
+				position: relative;
+				padding: 0;
+				color: $color-dark;
+				font: 400 13px $font-primary;
+				letter-spacing: 1.5px;
+				text-transform: uppercase;
+				@include transition(linear 0.1s);
+				&:hover, &.active {
+					color: $color-primary;
+				}
+			}
+			.dropdown-menu {
+				position: absolute;
+				top: 80px;
+				left: -30px;
+				background: $color-white;
+				min-width: 220px;
+				border: none;
+				border-radius: 0;
+				padding: 25px 0;
+				li {
+					position: relative;
+					padding: 5px 30px;
+					a {
+						display: block;
+						font-size: 15px;
+					}
+				}
+				.sub-dropdown {
+					a {
+						position: relative;
+						display: block;
+						padding-right: 13px;
+						&:before, &:after {
+							content: '';
+							position: absolute;
+							top: 50%;
+							@include transform(translateY(-50%));
+							background: $bg-dark;
+							@include transition(linear 0.1s);
+						}
+						&:before {
+							right: 0px;
+							width: 7px;
+							height: 1px;
+						}
+						&:after {
+							right: 3px;
+							width: 1px;
+							height: 7px;
+						}
+						&:hover {
+							&:before, &:after {
+								background: $color-primary;
+							}
+						}
+					}
+					.sub-dropdown-menu {
+						position: absolute;
+						top: -25px;
+						left: 100%;
+						display: none;
+						background: #fff;
+						min-width: 220px;
+						padding: 30px;
+						a {
+							margin-bottom: 10px;
+							&:before, &:after {
+								background: transparent;
+								width: 0;
+								height: 0;
+							}
+							&:last-child {
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+			}
+			&.nav-dropdown {
+				position: relative;
+				&:after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+				.nav-link {
+					&:before, &:after {
+						content: '';
+						position: absolute;
+						top: 50%;
+						@include transform(translateY(-50%));
+						background: $bg-dark;
+						@include transition(linear 0.1s);
+					}
+					&:before {
+						right: 0px;
+						width: 7px;
+						height: 1px;
+					}
+					&:after {
+						right: 3px;
+						width: 1px;
+						height: 7px;
+					}
+					&:hover {
+						&:before, &:after {
+							background: $color-primary;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//
+	// Nav Toggle button //
+	//
+	.nav-toggle-btn {
+		position: absolute;
+		top: 50%;
+		right: 20px;
+		@include transform(translateY(-50%));
+
+		.lines {
+			position: relative;
+			display: inline-block;
+			background: $bg-dark;
+			width: 18px;
+			height: 2px;
+			margin: 0;
+			padding: 0;
+			vertical-align: middle;
+			@include transition(linear 0.1s);
+			&:before, &:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				background: $bg-dark;
+				width: 18px;
+				height: 2px;
+				display: inline-block;
+				@include transition(linear 0.1s);
+			}
+			&:before {
+				top: 5px;
+			}
+			&:after {
+				top: -5px;
+			}
+		}
+		&.nav-toggle-close {
+			.lines {
+				background: transparent;
+				&:before, &:after {
+					top: 0;
+					@include transform-origin(50% 50%);
+				}
+				&:before {
+					@include transform(rotate3d(0, 0, 1, 45deg));
+				}
+				&:after {
+					@include transform(rotate3d(0, 0, 1, -45deg));
+				}
+			}
+		}
+		&.left {
+			right: auto;
+			left: 20px;
+		}
+		&.center {
+			right: auto;
+			left: 50%;
+			@include transform(translate(-50%, -50%));
+		}
+	}
+
+	//
+	// Dropdown menu Styles //
+	//
+	.dropdown-dark, .dropdown-transparent-dark {
+		.nav-item {
+			&.nav-dropdown {
+				.dropdown-menu {
+					li {
+						a {
+							color: $color-white-07;
+							&:before, &:after {
+								background: $color-white-07;
+							}
+							&:hover {
+								color: $color-white;
+								&:before, &:after {
+									background: $color-white;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include breakpoint-above(lg) {
+		.dropdown-dark {
+			.nav-item {
+				&.nav-dropdown {
+					.dropdown-menu, 
+					.dropdown-menu .sub-dropdown .sub-dropdown-menu {
+						background: $bg-dark-lighter;
+					}
+				}
+			}
+		}
+		.dropdown-grey {
+			.nav-item {
+				&.nav-dropdown {
+					.dropdown-menu, 
+					.dropdown-menu .sub-dropdown .sub-dropdown-menu {
+						background: $bg-grey;
+					}
+				}
+			}
+		}
+		.dropdown-transparent {
+			.nav-item {
+				&.nav-dropdown {
+					.dropdown-menu, 
+					.dropdown-menu .sub-dropdown .sub-dropdown-menu {
+						background: $color-white-09;
+					}
+				}
+			}
+		}
+		.dropdown-transparent-dark {
+			.nav-item {
+				&.nav-dropdown {
+					.dropdown-menu, 
+					.dropdown-menu .sub-dropdown .sub-dropdown-menu {
+						background: $color-black-09;
+					}
+				}
+			}
+		}
+	}
+
+	//
+	// Navbar Responsive - Screen resolution above 992px(lg) //
+	//
+	@include breakpoint-above(lg) {
+		.nav-toggle-btn {
+			display: none;
+		}
+		.nav {
+			.nav-item {
+				margin-right: 30px;
+				&:last-child {
+					margin-right: 0;
+				}
+				.nav-link {
+					line-height: 80px;
+				}
+				&.nav-dropdown {
+					.nav-link {
+						padding-right: 13px;
+					}
+					.dropdown-menu {
+						display: block;
+						visibility: hidden;
+						opacity: 0;
+						margin: 0;
+						@include transition(linear 0.1s);
+						li {
+							&:hover {
+								a {
+									padding-left: 2px;
+								}
+								.sub-dropdown-menu {
+									a {
+										padding: 0;
+										&:hover {
+											padding-left: 2px;
+										}
+									}
+								}
+							}
+						}
+						.sub-dropdown {
+							.sub-dropdown-menu {
+								display: block;
+								visibility: hidden;
+								opacity: 0;
+								@include transition(linear 0.1s);
+							}
+							&:hover {
+								a {
+									&:after {
+										@include transform(translateY(-50%) rotate(-90deg));
+									}
+								}
+								.sub-dropdown-menu {
+									visibility: visible;
+									opacity: 1;
+									@include box-shadow(0 2px 12px 0 rgba(0,0,0,0.08));
+								}
+							}
+						}
+					}
+					&:last-child, 
+					&:nth-last-child(2) {
+						.dropdown-menu {
+							right: 0;
+							left: auto;
+							.sub-dropdown {
+								.sub-dropdown-menu {
+									left: -100%;
+								}
+							}
+						}
+					}
+					&:last-child {
+						.dropdown-menu {
+							right: 0;
+							left: auto;
+						}
+					}
+					&:hover {
+						.nav-link {
+							&:after {
+								@include transform(translateY(-50%) rotate(-90deg));
+							}
+						}
+						.dropdown-menu {
+							visibility: visible;
+							opacity: 1;
+							@include box-shadow(0 2px 12px 0 rgba(0,0,0,0.08));
+						}
+					}
+				}	
+			}
+		}
+	}
+
+	//
+	// Navbar Responsive - Screen resolution less than 992px(lg) //
+	//
+	@include breakpoint-less(lg) {
+		.container, .container-fluid {
+			height: 80px;
+			@include transition(ease-out 0.2s);
+		}
+		.nav {
+			position: absolute;
+			top: 80px;
+			right: 20px;
+			left: 20px;
+			display: none;
+			background: $color-white;
+			@include box-shadow(0 2px 12px 0 rgba(0,0,0,0.08));
+			padding: 15px 20px;
+			text-align: left;
+			.nav-item {
+				margin: 0;
+				.nav-link {
+					padding: 5px 0;
+				}
+				.dropdown-menu {
+					position: relative;
+					top: 0;
+					left: 0;
+					background: transparent;
+					width: 100%;
+					margin: 5px 0 10px;
+					border: 1px solid $border-grey;
+					padding: 15px 0;
+					li {
+						padding: 5px 20px;
+					}
+					.sub-dropdown {
+						.sub-dropdown-menu {
+							position: relative;
+							top: 0;
+							left: 0;
+							background: transparent;
+							width: 100%;
+							padding: 10px 20px 5px;
+							&.sub-dropdown-menu-show {
+								display: block;
+							}
+						}
+					}
+					&.dropdown-menu-show {
+						display: block;
+					}
+				}
+				&.dropdown-minus {
+					.nav-link {
+						color: $color-primary;
+						&:before, &:after {
+							background: $color-primary;
+						}
+						&:after {
+							@include transform(translateY(-50%) rotate(-90deg));
+						}
+					}
+					.dropdown-menu {
+						.sub-dropdown-minus {
+							a {
+								color: $color-primary;
+								&:before, &:after {
+									background: $color-primary;
+								}
+								&:after {
+									@include transform(translateY(-50%) rotate(-90deg));
+								}
+							}
+							.sub-dropdown-menu {
+								a {
+									color: $color-dark;
+									&:hover {
+										color: $color-primary;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.nav-show {
+				display: block;
+			}
+		}
+		.dropdown-dark {
+			background: $bg-dark-lighter;
+		}
+		.dropdown-grey {
+			background: $bg-grey;
+		}
+		.dropdown-transparent {
+			background: $color-white-09;
+		}
+		.dropdown-transparent-dark {
+			background: $color-black-09;
+		}
+		.dropdown-dark, .dropdown-transparent-dark {
+			.nav-item {
+				.dropdown-menu {
+					border-color: $color-white-02;
+				}
+				.nav-link {
+					color: $color-white-07;
+					&:hover, &.active {
+						color: $color-white;
+					}
+				}
+				&.nav-dropdown {
+					.nav-link {
+						&:before, &:after {
+							background: $color-white-07;
+						}
+						&:hover {
+							&:before, &:after {
+								background: $color-white;
+							}
+						}
+					}
+				}
+				&.dropdown-minus {
+					.nav-link {
+						color: $color-white;
+						&:before, &:after {
+							background: $color-white;
+						}
+					}
+					.dropdown-menu {
+						.sub-dropdown {
+							&.sub-dropdown-minus {
+								a {
+									color: $color-white;
+									&:before, &:after {
+										background: $color-white;
+									}
+								}
+								.sub-dropdown-menu {
+									a {
+										color: $color-white-07;
+										&:hover {
+											color: $color-white;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// 
+// Navbar backgrounds //
+//
+.navbar-dark { background: $bg-dark; }
+.navbar-grey { background: $bg-grey; }
+.navbar-transparent { background: $color-white-09; }
+.navbar-transparent-dark { background: $color-black-09; }
+
+//
+// Navbar Dark styles //
+//
+.navbar-dark, .navbar-transparent-dark {
+	.nav-toggle-btn {
+		.lines, .lines:before, .lines:after {
+			background: $color-white;
+		}
+		&.nav-toggle-close {
+			.lines {
+				background: transparent;
+			}
+		}
+	}
+	.navbar-brand,
+	h1, h2, h3, h4, h5, h6 {
+		color: $color-white;
+	}
+	.list-horizontal-unstyled {
+		li {
+			a {
+				color: $color-white;
+				&:hover {
+					color: $color-white-07;
+				}
+			}
+		}
+	}
+	@include breakpoint-above(lg) {
+		.nav {
+			.nav-item {
+				.nav-link {
+					color: $color-white;
+					&:hover, &.active {
+						color: $color-white-07;
+					}
+				}
+				&.nav-dropdown {
+					.nav-link {
+						&:before, &:after {
+							background: $color-white;
+						}
+						&:hover {
+							&:before, &:after {
+								background: $color-white-07;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//
+// Navbar Positions //
+//
+.navbar-absolute, .navbar-absolute-dark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: transparent;
+	width: 100%;
+	.nav-toggle-btn {
+		&.nav-toggle-close {
+			.lines {
+				background: transparent;
+			}
+		}
+	}
+}
+
+.navbar-absolute {
+	.navbar-brand, h1, h2, h3, h4, h5, h6 {
+		color: $color-white;
+	}
+	.nav-toggle-btn {
+		.lines, .lines:before, .lines:after {
+			background: $color-white;
+		}
+	}
+	.list-horizontal-unstyled {
+		li {
+			a {
+				color: $color-white;
+				&:hover {
+					color: $color-white-07;
+				}
+			}
+		}
+	}
+	
+	@include breakpoint-above(lg) {
+		.nav {
+			.nav-item {
+				.nav-link {
+					color: $color-white;
+					&:hover, &.active {
+						color: $color-white-07;
+					}
+				}
+				&.nav-dropdown {
+					.nav-link {
+						&:before, &:after {
+							background: $color-white;
+						}
+						&:hover {
+							&:before, &:after {
+								background: $color-white-07;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.navbar-absolute-dark {
+	.nav-toggle-btn {
+		.lines, .lines:before, .lines:after {
+			background: $bg-dark;
+		}
+	}
+
+	@include breakpoint-above(lg) {
+		.navbar-brand, h1, h2, h3, h4, h5, h6 {
+			color: $color-dark;
+		}
+		.nav {
+			.nav-item {
+				.nav-link {
+					color: $color-dark;
+					&:before, &:after {
+						background: $bg-dark;
+					}
+					&:hover, &.active {
+						color: $color-primary;
+					}
+				}
+			}
+		}
+	}
+
+	&.navbar-dark, 
+	&.navbar-transparent-dark {
+		.navbar-brand, h1, h2, h3, h4, h5, h6 {
+			color: $color-dark;
+		}
+		@include breakpoint-above(lg) {
+			.nav {
+				.nav-item {
+					.nav-link {
+						color: $color-dark;
+						&:before, &:after {
+							background: $bg-dark;
+						}
+						&:hover, &.active {
+							color: $color-primary;
+						}
+						&:hover {
+							&:before, &:after {
+								background: $color-primary;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.navbar-shrink {
+	height: 60px;
+	@include box-shadow(0 2px 12px 0 rgba(0,0,0,0.08));
+
+	@include breakpoint-above(lg) {
+		.nav {
+			.nav-item {
+				.nav-link {
+					line-height: 60px;
+				}
+				.dropdown-menu {
+					top: 60px;
+				}
+			}
+		}
+	}
+	@include breakpoint-less(lg) {
+		.container {
+			height: 60px;
+		}
+		.nav {
+			top: 60px;
+		}
+	}
+
+	&.navbar-absolute {
+		.nav-toggle-btn {
+			.lines {
+				background: $bg-dark;
+				&:before, &:after {
+					background: $bg-dark;
+				}
+			}
+			&.nav-toggle-close {
+				.lines {
+					background: transparent;
+				}
+			}
+		}
+	}
+	&.navbar-absolute, 
+	&.navbar-absolute-dark {
+		background: $color-white;
+
+		.navbar-brand, h1, h2, h3, h4, h5, h6 {
+			color: $color-dark;
+		}
+		@include breakpoint-above(lg) {
+			.nav {
+				.nav-item {
+					.nav-link {
+						color: $color-dark;
+						&:before, &:after {
+							background: $bg-dark;
+						}
+						&:hover, &.active {
+							color: $color-primary;
+						}
+						&:hover {
+							&:before, &:after {
+								background: $color-primary;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.navbar-dark {
+			background: $bg-dark;
+		}
+		&.navbar-grey {
+			background: $bg-grey;
+		}
+		&.navbar-transparent {
+			background: $color-white-09;
+			.navbar-brand, h1, h2, h3, h4, h5, h6 {
+				color: $color-dark;
+			}
+			@include breakpoint-above(lg) {
+				.nav {
+					.nav-item {
+						.nav-link {
+							color: $color-dark;
+							&:before, &:after {
+								background: $bg-dark;
+							}
+							&:hover, &.active {
+								color: $color-primary;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.navbar-transparent-dark {
+			background: $color-black-09;
+		}
+		&.navbar-dark, &.navbar-transparent-dark {
+			.navbar-brand, h1, h2, h3, h4, h5, h6, .list-horizontal-unstyled li a {
+				color: $color-white;
+			}
+			.list-horizontal-unstyled {
+				li {
+					a {
+						&:hover {
+							color: $color-white-07;
+						}
+					}
+				}
+			}
+			.nav-toggle-btn {
+				.lines {
+					background: $color-white;
+					&:before, &:after {
+						background: $color-white;
+					}
+				}
+				&.nav-toggle-close {
+					.lines {
+						background: transparent;
+					}
+				}
+			}
+			@include breakpoint-above(lg) {
+				.nav {
+					.nav-item {
+						.nav-link {
+							color: $color-white;
+							&:before, &:after {
+								background: $color-white;
+							}
+							&:hover, &.active {
+								color: $color-white-07;
+							}
+							&:hover {
+								&:before, &:after {
+									background: $color-white-07;
+								}
+							}
+						}
+					}
+				}
+			}	
+		}
+	}
+}
+
+.navbar-fixed, .navbar-sticky.navbar-sticky-apply {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.navbar-placeholder-padding {
+	padding-top: 80px;
+}
+.navbar-absolute ~ .navbar-placeholder-padding, 
+.navbar-absolute-dark ~ .navbar-placeholder-padding {
+	padding: 0;
+}
+
+//
+// Mega Dropdown Menu //
+//
+.navbar {
+	.nav {
+		.nav-item {
+			&.nav-megadropdown {
+				text-align: left;
+				.nav-link {
+					position: relative;
+					padding-right: 13px;
+					&:before, &:after {
+						content: '';
+						position: absolute;
+						top: 50%;
+						@include transform(translateY(-50%));
+						background: $bg-dark;
+						@include transition(linear 0.1s);
+					}
+					&:before {
+						right: 0px;
+						width: 7px;
+						height: 1px;
+					}
+					&:after {
+						right: 3px;
+						width: 1px;
+						height: 7px;
+					}
+					&:hover {
+						&:before, &:after {
+							background: $color-primary;
+						}
+					}
+				}
+				.mega-menu {
+					font-size: 15px;
+					.row {
+						margin: 0 -15px -20px;
+						div[class^="col-"], div[class*=" col-"] {
+							margin-bottom: 20px;
+							padding: 0 15px;
+						}
+					}
+					ul {
+						li {
+							margin-bottom: 10px;
+							&:last-child {
+								margin-bottom: 0;
+							}
+						}
+						&.list-unstyled {
+							li {
+								i {
+									width: 24px;
+									padding-right: 8px;
+									text-align: center;
+									@include transition(linear 0.1s);
+								}
+								a {
+									&:hover {
+										padding-left: 2px;
+									}
+								}
+							}
+						}
+					}
+					h1, h2, h3, h4, h5, h6 {
+						color: $color-dark;
+					}
+				}
+				@include breakpoint-above(lg) {
+					.mega-menu {
+						position: absolute;
+						top: 80px;
+						right: 20px;
+						left: 20px;
+						visibility: hidden;
+						opacity: 0;
+						background: $color-white;
+						@include box-shadow(0 2px 12px 0 rgba(0,0,0,0.08));
+						padding: 30px;
+						@include transition(linear 0.1s);
+					}
+					&:hover {
+						.mega-menu {
+							visibility: visible;
+							opacity: 1;
+						}
+						.nav-link {
+							&:after {
+								@include transform(translateY(-50%) rotate(-90deg));
+							}
+						}
+					}
+				}
+				@include breakpoint-less(lg) {
+					.mega-menu {
+						display: none;
+						border: 1px solid $border-grey;
+						margin: 5px 0 10px;
+						padding: 20px;
+						&.mega-menu-show {
+							display: block;
+						}
+					}
+					.nav-link-minus {
+						color: $color-primary;
+						&:before, &:after {
+							background: $color-primary;
+						}
+						&:after {
+							@include transform(translateY(-50%) rotate(-90deg));
+						}
+					}
+				}
+			}
+		}
+		&.dropdown-dark, 
+		&.dropdown-transparent-dark {
+			.nav-megadropdown {
+				.mega-menu {
+					border-color: $color-white-02;
+					h1, h2, h3, h4, h5, h6 {
+						color: $color-white;
+					}
+					a {
+						color: $color-white-07;
+						&:hover, &:focus {
+							color: $color-white;
+						}
+					}
+				}
+			}
+			@include breakpoint-less(lg) {
+				.nav-megadropdown {
+					.nav-link {
+						color: $color-white-07;
+						&:before, &:after {
+							background: $color-white-07;
+						}
+						&:hover, &:focus {
+							color: $color-white;
+							&:before, &:after {
+								background: $color-white;
+							}
+						}
+						&.nav-link-minus {
+							color: $color-white;
+							&:before, &:after {
+								background: $color-white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@include breakpoint-above(lg) {
+		&.navbar-dark, 
+		&.navbar-transparent-dark {
+			.nav-item {
+				&.nav-megadropdown {
+					.nav-link {
+						&:before, &:after {
+							background: $color-white;
+						}
+						&:hover {
+							&:before, &:after {
+								background: $color-white-07;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.navbar-absolute {
+			.nav-item {
+				&.nav-megadropdown {
+					.nav-link {
+						&:before, &:after {
+							background: $color-white;
+						}
+						&:hover {
+							&:before, &:after {
+								background: $color-white-07;
+							}
+						}
+					}
+				}
+			}
+			&.navbar-shrink {
+				.nav-item {
+					&.nav-megadropdown {
+						.nav-link {
+							&:before, &:after {
+								background: $color-dark;
+							}
+							&:hover {
+								&:before, &:after {
+									background: $color-primary;
+								}
+							}
+						}
+					}
+				}
+				&.navbar-dark, 
+				&.navbar-transparent-dark {
+					.nav-item {
+						&.nav-megadropdown {
+							.nav-link {
+								&:before, &:after {
+									background: $color-white;
+								}
+								&:hover {
+									&:before, &:after {
+										background: $color-white-07;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.navbar-absolute-dark {
+			.nav-item {
+				&.nav-megadropdown {
+					.nav-link {
+						&:before, &:after {
+							background: $color-dark;
+						}
+						&:hover {
+							&:before, &:after {
+								background: $color-primary;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.navbar-shrink {
+			.nav-item {
+				&.nav-megadropdown {
+					.mega-menu {
+						top: 60px;
+					}
+				}
+			}
+		}
+		.nav {
+			&.dropdown-grey {
+				.nav-megadropdown {
+					.mega-menu {
+						background: $bg-grey;
+					}
+				}
+			}
+			&.dropdown-dark {
+				.nav-megadropdown {
+					.mega-menu {
+						background: $bg-dark-lighter;
+					}
+				}
+			}
+			&.dropdown-transparent {
+				.nav-megadropdown {
+					.mega-menu {
+						background: $color-white-09;
+					}
+				}
+			}
+			&.dropdown-transparent-dark {
+				.nav-megadropdown {
+					.mega-menu {
+						background: $color-black-09;
+					}
+				}
+			}
+		}
+	}
+}

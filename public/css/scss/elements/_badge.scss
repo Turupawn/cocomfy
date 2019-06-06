@@ -1,0 +1,7 @@
+//
+// Badge Styles //
+//
+.badge { vertical-align: middle; }
+.badge-secondary { background: $button-grey-darker; }
+.badge-light { background: $button-grey-lighter; }
+.badge-secondary, .badge-warning, .badge-light { color: $color-dark; }

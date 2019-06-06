@@ -1,0 +1,27 @@
+//
+// Dropdown Styles //
+//
+.dropdown, .btn-group {
+	.dropdown-menu {
+		border: 0;
+		border-radius: 0;
+		@include box-shadow(0 0 12px 0 rgba(0,0,0,0.08));
+		padding: 15px 20px;
+		.dropdown-item {
+			margin-bottom: 10px;
+			padding: 0;
+			color: $color-dark;
+			font: 300 15px $font-primary;
+			letter-spacing: 0;
+			text-transform: none;
+			@include transition(linear 0.1s);
+			&:last-child {
+				margin: 0;
+			}
+			&:hover, &:focus, &:active {
+				background: transparent;
+				color: $color-primary;
+			}
+		}
+	}
+}

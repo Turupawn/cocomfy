@@ -1,0 +1,35 @@
+//
+// Subscribe Lightbox Styles //
+//
+.subscribe-lightbox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 4;
+	visibility: hidden;
+	opacity: 0;
+	background: $color-black-07;
+	width: 100%;
+	height: 100%;
+	cursor: url(../images/cursor.png), auto;
+	@include transition(ease-out 0.2s);
+	.container, .container-fluid {
+		position: relative;
+		top: 50%;
+		@include transform(translateY(-50%) scale(0.98));
+		@include transition(ease-out 0.2s);
+		div[class^="col-"], div[class*=" col-"] {
+			background: $color-white;
+			@include box-shadow(0 0 14px 0 rgba(0,0,0,0.3));
+			padding: 50px 30px;
+			cursor: auto;
+		}
+	}
+	&.subscribe-lightbox-show {
+		visibility: visible;
+		opacity: 1;
+		.container, .container-fluid {
+			@include transform(translateY(-50%) scale(1));
+		}
+	}
+}

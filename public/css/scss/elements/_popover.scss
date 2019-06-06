@@ -1,0 +1,21 @@
+//
+// Popover Styles //
+//
+.popover {
+	border: 0;
+	@include box-shadow(0 0 12px 0 rgba(0,0,0,0.08));
+	.arrow {
+		&:before {
+			border: 0;
+		}
+	}
+	.popover-header {
+		background: transparent;
+		padding: 15px 20px;
+		font-size: 16px;
+		line-height: 32px;
+	}
+	.popover-body {
+		padding: 20px;
+	}
+}

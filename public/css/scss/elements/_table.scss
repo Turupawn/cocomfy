@@ -1,0 +1,43 @@
+//
+// Table Styles //
+//
+.table {
+	td, th { border-top: 1px solid $border-grey; }
+	thead {
+		th { border-bottom: 2px solid $border-grey; }
+	}
+
+	&.table-dark {
+		background: $bg-dark-lighter;
+		thead {
+			th { border-bottom: 2px solid $color-white-01; }
+		}
+		td, th { border-top: 1px solid $color-white-01; }
+	}
+	&.table-bordered {
+		td, th { border: 1px solid $border-grey; }
+		&.table-dark {
+			td, th { border: 1px solid $color-white-01; }
+		}
+	}
+
+	.thead-dark {
+		th { background: $bg-dark-lighter; border-color: $color-white-01; }
+	}
+	.thead-light {
+		th { background: $button-grey-lighter; }
+	}
+
+	.table-active {
+		td, th { background: $button-grey-darker; }
+	}
+	.table-secondary {
+		td, th { background: $button-grey; }
+	}
+	.table-light {
+		td, th { background: $bg-grey-lighter; }
+	}
+	.table-dark {
+		td, th { background: $button-grey-darkest; }
+	}
+}

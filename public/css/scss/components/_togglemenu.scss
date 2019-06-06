@@ -1,0 +1,150 @@
+//
+// Fullscreen Toggle menu Styles //
+//
+.fullscreen-toggle-btn {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	@include transform(translateY(-50%));
+	visibility: visible;
+	opacity: 1;
+	@include transition(ease-out 0.2s);
+
+	.lines {
+		position: relative;
+		display: inline-block;
+		background: $bg-dark;
+		width: 18px;
+		height: 2px;
+		margin: 0;
+		padding: 0;
+		vertical-align: middle;
+		@include transition(linear 0.1s);
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			background: $bg-dark;
+			width: 18px;
+			height: 2px;
+			display: inline-block;
+			@include transition(linear 0.1s);
+		}
+		&:before {
+			top: 5px;
+		}
+		&:after {
+			top: -5px;
+		}
+	}
+	&.fullscreen-toggle-hide {
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+.container-fluid {
+	.fullscreen-toggle-btn {
+		right: 30px;
+	}
+}
+.row {
+	.fullscreen-toggle-btn {
+		right: 0;
+	}
+}
+.navbar-dark, .navbar-transparent-dark, .navbar-absolute {
+	.fullscreen-toggle-btn {
+		.lines, .lines:before, .lines:after {
+			background: $color-white;
+		}
+	}
+}
+.navbar-shrink.navbar-absolute {
+	.fullscreen-toggle-btn {
+		.lines, .lines:before, .lines:after {
+			background: $bg-dark;
+		}
+	}
+}
+
+.fullscreen-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 4;
+	visibility: hidden;
+	opacity: 0;
+	background: $color-black-07;
+	width: 100%;
+	height: 100%;
+	cursor: url(../images/cursor.png), auto;
+	@include transition(ease-out 0.2s);
+
+	.fullscreen-menu-wrapper {
+		@include transform(scale(0.98));
+		height: 100%;
+		color: $color-white-06;
+		@include transition(ease-out 0.2s);
+		h1, h2, h3, h4, h5, h6 {
+			color: $color-white;
+		}
+		.position-top, 
+		.position-middle, 
+		.position-bottom {
+			padding: 0 20px;
+		}
+		.position-middle {
+			ul {
+				margin: 0;
+				padding: 0;
+				li {
+					list-style-type: none;
+					margin: 5px 0;
+					a {
+						display: inline-block;
+						color: $color-white;
+
+						&:hover {
+							color: $color-white-07;
+						}
+						h1, h2, h3, h4, h5, h6 {
+							margin: 0;
+							color: $color-white;
+							&:hover {
+								color: $color-white-07;
+							}
+							@include transition(linear 0.1s);
+						}
+					}
+				}
+			}
+		}
+		
+		@include breakpoint-above(md) {
+			.position-top, 
+			.position-middle, 
+			.position-bottom {
+				padding: 0 50px;
+			}
+			.position-top {
+				top: 50px;
+			}
+			.position-bottom {
+				bottom: 50px;
+			}
+		}
+	}
+	a {
+		color: $color-white-07;
+		&:hover, &:focus {
+			color: $color-white;
+		}
+	}
+	&.fullscreen-menu-show {
+		visibility: visible;
+		opacity: 1;
+		.fullscreen-menu-wrapper {
+			@include transform(scale(1));
+		}
+	}
+}

@@ -1,0 +1,79 @@
+//
+// Pagination Styles //
+//
+.pagination {
+	margin: 0;
+	padding: 0;
+	.page-item {
+		margin: 0 10px 0 0;
+		text-align: center;
+		&:last-child {
+			margin-right: 0;
+		}
+		.page-link {
+			background: transparent;
+			min-width: 31px;
+			height: 31px;
+			border: 1px solid $border-grey;
+			border-radius: 20px;
+			padding: 0;
+			color: $color-dark;
+			font-size: 14px;
+			line-height: 31px;
+			@include transition(linear 0.1s);
+			&:hover {
+				background: transparent;
+				border-color: $border-dark;
+			}
+		}
+		&.active {
+			.page-link {
+				background: transparent;
+				border-color: $border-dark;
+				color: $color-dark;
+			}
+		}
+	}
+	&.pagination-sm {
+		.page-item {
+			.page-link {
+				min-width: 27px;
+				height: 27px;
+				border-radius: 20px;
+				padding: 0;
+				line-height: 27px;
+			}
+		}
+	}
+	&.pagination-lg {
+		.page-item {
+			.page-link {
+				min-width: 35px;
+				height: 35px;
+				border-radius: 20px;
+				padding: 0;
+				line-height: 35px;
+			}
+		}
+	}
+}
+.bg-dark, .bg-dark-lighter, 
+.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06,  .bg-black-07, .bg-black-08, .bg-black-09 {
+	.pagination {
+		.page-item {
+			.page-link {
+				border-color: $color-white-02;
+				color: $color-white;
+				&:hover {
+					border-color: $color-white;
+				}
+			}
+			&.active {
+				.page-link {
+					border-color: $color-white;
+					color: $color-white;
+				}
+			}
+		}
+	}
+}

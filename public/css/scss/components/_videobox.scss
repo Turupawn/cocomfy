@@ -1,0 +1,14 @@
+//
+// Video box Styles //
+//
+.video-box {
+	position: relative;
+	overflow: hidden;
+	.button-circle, .button, .btn {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%,-50%));
+		z-index: 1;
+	}
+}

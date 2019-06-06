@@ -1,0 +1,16 @@
+//
+// Box Styles //
+//
+.border-radius {
+	border-radius: 5px;
+}
+.box-shadow {
+	@include box-shadow(0 0 30px 0 rgba(0,0,0,0.08));
+}
+.box-shadow-with-hover {
+	@include box-shadow(0 0 30px 0 rgba(0,0,0,0.08));
+	@include transition(ease-out 0.2s);
+	&:hover {
+		@include box-shadow(0 0 36px 0 rgba(0,0,0,0.12));
+	}
+}
