@@ -6,7 +6,7 @@ ruby '2.4.1'
 # My Imports
 gem 'friendly_id', '~> 5.1.0'
 gem 'devise'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'dogecoin_client'
 gem 'thin'
 gem 'mini_magick'
